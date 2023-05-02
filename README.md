@@ -7,17 +7,21 @@ CollectADData.ps1 - On a elevated PowerShell session, it collects AD Data and sa
 ExportADData.ps1 - Exports the Active Directory data collected using the ColectADData.ps1 to a word or html format. It uses the PScribo PowerShell module (https://github.com/iainbrighton/PScribo). It can be run from any Windows Device (Workstation, Server or Domain Controller). As it uses external PowerShell module, it is recommended not to run from a Domain Controller.
 
 # Examples
-.\ExportADData.ps1 -SaveTo 'c:\temp\CollectADData'
-**Collects the Information and save the json files to 'c:\temp\CollectADData'
+Example01: Collects the Information and save the json files to 'c:\temp\CollectADData'
 
-.\ExportADData.ps1 -SourceData 'c:\temp\CollectADData' -OutputFormat @('Word')
-**Exports the data collected by CollectADData.ps1 script onto 'c:\temp\CollectADData' and export to word format
+**.\ExportADData.ps1 -SaveTo 'c:\temp\CollectADData'**
 
-.\ExportADData.ps1 -SourceData 'c:\temp\CollectADData' -OutputFormat @('Word') -DormantDays 90 -PasswordDays 30 
-**Exports the data collected by CollectADData.ps1 script onto 'c:\temp\CollectADData' and export to word format. It classify an object as dormant if the password was not changed for over 90 days and a computer object that did not change its password for 30 days. 
+Example 02: Exports the data collected by CollectADData.ps1 script onto 'c:\temp\CollectADData' and export to word format
 
-.\ExportADData.ps1 -SourceData 'c:\temp\CollectADData' -OutputFormat @('Word', 'HTML') -DormantDays 90 -PasswordDays 30 -CompanyName 'RFL Systems' -CompanyWeb 'www.rflsystems.co.uk' -CompanyEmail 'team@rflsystems.co.uk'
-**Exports the data collected by CollectADData.ps1 script onto 'c:\temp\CollectADData' and export to word format. It classify an object as dormant if the password was not changed for over 90 days and a computer object that did not change its password for 30 days. Add the company details to the header
+**.\ExportADData.ps1 -SourceData 'c:\temp\CollectADData' -OutputFormat @('Word')**
+
+Example 03: Exports the data collected by CollectADData.ps1 script onto 'c:\temp\CollectADData' and export to word format. It classify an object as dormant if the password was not changed for over 90 days and a computer object that did not change its password for 30 days.
+
+**.\ExportADData.ps1 -SourceData 'c:\temp\CollectADData' -OutputFormat @('Word') -DormantDays 90 -PasswordDays 30 **
+
+Example 04: Exports the data collected by CollectADData.ps1 script onto 'c:\temp\CollectADData' and export to word format. It classify an object as dormant if the password was not changed for over 90 days and a computer object that did not change its password for 30 days. Add the company details to the header
+
+**.\ExportADData.ps1 -SourceData 'c:\temp\CollectADData' -OutputFormat @('Word', 'HTML') -DormantDays 90 -PasswordDays 30 -CompanyName 'RFL Systems' -CompanyWeb 'www.rflsystems.co.uk' -CompanyEmail 'team@rflsystems.co.uk'**
 
 # Documentation
 Access our Wiki at https://github.com/dotraphael/RFL.Microsoft.AD/wiki
